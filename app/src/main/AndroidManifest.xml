@@ -12,19 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RafifApps">
         <activity
+            android:name=".pertemuan_3.ThirdResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_2.SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_3.ThirdActivity"
             android:exported="true">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
     </application>
 
 </manifest>

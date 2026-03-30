@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Rafif Apps</string>
+    <string name="halaman">Halaman Verifikasi</string>
+    <string name="halamanselanjutnya">Kode Berhasil Dikirim</string>
+    <string name="tulisanbawah">Silahkan Periksa Nomor Anda</string>
+
 </resources>
