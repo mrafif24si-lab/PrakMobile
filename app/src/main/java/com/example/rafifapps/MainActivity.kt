@@ -2,9 +2,11 @@ package com.example.rafifapps
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rafifapps.databinding.ActivityFourthBinding
@@ -12,6 +14,7 @@ import com.example.rafifapps.databinding.ActivityMainBinding
 import com.example.rafifapps.databinding.ActivityThirdBinding
 import com.example.rafifapps.pertemuan_3.ThirdResultActivity
 import com.example.rafifapps.pertemuan_4.FourthActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -25,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //Kode ini harus selalu dipanggil saat butuh akses "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
         binding.btnKirim.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
 
@@ -38,9 +45,23 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.btnLogout.setOnClickListener {
-            val intent = Intent(this, AuthActivity::class.java)
-            startActivity(intent)
-
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    dialog.dismiss()
+                    sharedPref.edit {
+                        clear()
+                    }
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Tidak!")
+                }
+                .show()
         }
     }
 }
