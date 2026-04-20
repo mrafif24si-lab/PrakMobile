@@ -18,23 +18,28 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-            binding.btnKirim.setOnClickListener{
-                val intent = Intent(this, FourthActivity::class.java)
+        binding.btnKirim.setOnClickListener {
+            val intent = Intent(this, FourthActivity::class.java)
 
-                /*tambahkan bagian berikut*/
-                intent.putExtra("name", "Politeknik Caltex Riau")
-                intent.putExtra("from", "Rumbai")
-                intent.putExtra("age", 25)
+            /*tambahkan bagian berikut*/
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
 
-                startActivity(intent)
+            startActivity(intent)
 
+
+        }
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
 
         }
     }
