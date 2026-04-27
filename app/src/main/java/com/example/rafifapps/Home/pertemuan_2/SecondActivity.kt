@@ -1,4 +1,4 @@
-package com.example.rafifapps.pertemuan_2
+package com.example.rafifapps.Home.pertemuan_2
 
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rafifapps.R
@@ -24,7 +25,7 @@ class SecondActivity : AppCompatActivity() {
         }
 
         // --- Setup Toolbar ---
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
             title = "Second Activity"

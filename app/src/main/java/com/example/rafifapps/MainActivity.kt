@@ -3,18 +3,14 @@ package com.example.rafifapps
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.rafifapps.databinding.ActivityFourthBinding
 import com.example.rafifapps.databinding.ActivityMainBinding
-import com.example.rafifapps.databinding.ActivityThirdBinding
-import com.example.rafifapps.pertemuan_3.ThirdResultActivity
-import com.example.rafifapps.pertemuan_4.FourthActivity
-import com.example.rafifapps.pertemuan_7.SevenActivity
+import com.example.rafifapps.Home.pertemuan_4.FourthActivity
+import com.example.rafifapps.Home.pertemuan_7.SevenActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {

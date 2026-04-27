@@ -1,4 +1,4 @@
-package com.example.rafifapps.pertemuan_7
+package com.example.rafifapps.Home.pertemuan_7
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.rafifapps.R
 import com.example.rafifapps.databinding.ActivitySevenBinding
-import com.example.rafifapps.databinding.ActivityWebViewBinding
 
 class SevenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySevenBinding

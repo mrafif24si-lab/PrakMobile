@@ -2,15 +2,12 @@ package com.example.rafifapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rafifapps.databinding.ActivityAuthBinding
-import com.example.rafifapps.databinding.ActivityFifthBinding
-import com.example.rafifapps.pertemuan_3.ThirdResultActivity
 import androidx.core.content.edit
 
 class AuthActivity : AppCompatActivity() {

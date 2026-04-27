@@ -14,19 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RafifApps">
         <activity
-            android:name=".pertemuan_7.SevenActivity"
+            android:name=".SplashScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.pertemuan_7.SevenActivity"
             android:exported="false" />
         <activity
             android:name=".AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_5.FifthActivity"
+            android:name=".Home.pertemuan_5.FifthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_5.WebViewActivity"
+            android:name=".Home.pertemuan_5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".BaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,13 +38,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".pertemuan_4.FourthActivity"
+            android:name=".Home.pertemuan_4.FourthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.ThirdResultActivity"
+            android:name=".Home.pertemuan_3.ThirdResultActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_2.SecondActivity"
+            android:name=".Home.pertemuan_2.SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
