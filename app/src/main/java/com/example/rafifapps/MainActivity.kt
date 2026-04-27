@@ -14,6 +14,7 @@ import com.example.rafifapps.databinding.ActivityMainBinding
 import com.example.rafifapps.databinding.ActivityThirdBinding
 import com.example.rafifapps.pertemuan_3.ThirdResultActivity
 import com.example.rafifapps.pertemuan_4.FourthActivity
+import com.example.rafifapps.pertemuan_7.SevenActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -42,8 +43,19 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
 
+        }
+        binding.btnToSeven.setOnClickListener {
+            val intent = Intent(this, SevenActivity::class.java)
+            startActivity(intent)
+            finish()
 
         }
+        binding.btnToFive.setOnClickListener {
+            val intent = Intent(this, SevenActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle("Konfirmasi")
