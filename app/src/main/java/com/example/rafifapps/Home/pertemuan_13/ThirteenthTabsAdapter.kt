@@ -1,19 +1,20 @@
-package com.example.rafifapps.Home.pertemuan_10
+package com.example.rafifapps.Home.pertemuan_13
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class TenthTabsAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
+
+class ThirteenthTabsAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 
 
     override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> TabAFragment()
-            1 -> TabBFragment()
-            2 -> TabCFragment()
+            0 -> TabCaptureFragment ()
+            1 -> TabQrcodeFragment()
+            2 -> TabScanFragment()
             else -> throw IllegalStateException("Posisi tidak valid")
         }
     }

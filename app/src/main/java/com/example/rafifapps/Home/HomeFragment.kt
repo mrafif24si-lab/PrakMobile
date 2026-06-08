@@ -12,6 +12,7 @@ import androidx.core.content.edit
 import androidx.lifecycle.lifecycleScope
 import com.example.rafifapps.AuthActivity
 import com.example.rafifapps.Home.pertemuan_10.TenthActivity
+import com.example.rafifapps.Home.pertemuan_13.ThirteenthActivity
 import com.example.rafifapps.Home.pertemuan_2.SecondActivity
 import com.example.rafifapps.Home.pertemuan_3.ThirdResultActivity
 import com.example.rafifapps.Home.pertemuan_4.FourthActivity
@@ -85,6 +86,10 @@ class HomeFragment : Fragment() {
         /** Navigasi Pertemuan 10 */
         binding.btnPertemuan10.setOnClickListener {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
+        }
+
+        binding.btnPertemuan13.setOnClickListener {
+            startActivity(Intent(requireContext(), ThirteenthActivity::class.java))
         }
 
         /** Logout Logic */
