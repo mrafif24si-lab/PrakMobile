@@ -14,6 +14,7 @@ import com.example.rafifapps.AuthActivity
 import com.example.rafifapps.Home.pertemuan_10.TenthActivity
 import com.example.rafifapps.Home.pertemuan_13.ThirteenthActivity
 import com.example.rafifapps.Home.pertemuan_2.SecondActivity
+import com.example.rafifapps.Home.pertemuan_3.ThirdActivity
 import com.example.rafifapps.Home.pertemuan_3.ThirdResultActivity
 import com.example.rafifapps.Home.pertemuan_4.FourthActivity
 import com.example.rafifapps.Home.pertemuan_5.FifthActivity
@@ -55,7 +56,7 @@ class HomeFragment : Fragment() {
 
         /** Navigasi Pertemuan 3 */
         binding.btnPertemuan3.setOnClickListener {
-            startActivity(Intent(requireContext(), ThirdResultActivity::class.java))
+            startActivity(Intent(requireContext(), ThirdActivity::class.java))
         }
 
         /** Navigasi Pertemuan 4 */

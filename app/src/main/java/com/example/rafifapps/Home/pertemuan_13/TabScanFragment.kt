@@ -17,6 +17,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.example.rafifapps.R
 import com.example.rafifapps.databinding.FragmentTabScanBinding
+import com.example.rafifapps.utils.PermissionHelper
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
@@ -60,10 +61,15 @@ class TabScanFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        if (hasCameraPermission()) {
-            startCamera()
+        if (!PermissionHelper.hasPermission(
+                requireActivity(),
+                Manifest.permission.CAMERA)) {
+            PermissionHelper.requestPermission(
+                permissionLauncher,
+                Manifest.permission.CAMERA
+            )
         } else {
-            permissionLauncher.launch(Manifest.permission.CAMERA)
+            startCamera()
         }
     }
 
@@ -74,12 +80,12 @@ class TabScanFragment : Fragment() {
         scanner?.close()
         cameraExecutor.shutdown()
     }
-    private fun hasCameraPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(
-            requireContext(),
-            Manifest.permission.CAMERA
-        ) == PackageManager.PERMISSION_GRANTED
-    }
+//    private fun hasCameraPermission(): Boolean {
+//        return ContextCompat.checkSelfPermission(
+//            requireContext(),
+//            Manifest.permission.CAMERA
+//        ) == PackageManager.PERMISSION_GRANTED
+//    }
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
@@ -103,7 +109,11 @@ class TabScanFragment : Fragment() {
                                 if (barcodes.isNotEmpty()) {
                                     val rawValue = barcodes[0].rawValue
                                     activity?.runOnUiThread {
-                                        binding.tvScanResult.text = "Hasil: $rawValue"
+                                        // TAMBAHKAN PENGECEKAN INI
+                                        // Pastikan fragment belum dihancurkan (_binding tidak null)
+                                        if (_binding != null) {
+                                            binding.tvScanResult.text = "Hasil: $rawValue"
+                                        }
                                     }
                                 }
                             }
